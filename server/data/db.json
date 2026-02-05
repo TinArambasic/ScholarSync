@@ -3,15 +3,6 @@
   "answers": [],
   "users": [
     {
-      "_id": "u1770309996209",
-      "username": "tarambas",
-      "email": "tin004@outlook.com",
-      "password": "Altiami72!",
-      "role": "student",
-      "joinedCourses": [],
-      "createdAt": "2026-02-05T16:46:36.209Z"
-    },
-    {
       "_id": "u1770310439510",
       "username": "admin",
       "email": "admin@scholarsync.com",
