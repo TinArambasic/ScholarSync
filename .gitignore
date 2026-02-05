@@ -1,6 +1,6 @@
-node_modules/
-.env
-server/data/db.json
-dist/
-.DS_Store
-npm-debug.log
+"node_modules/"
+".env"
+"server/data/db.json"
+"dist/"
+".DS_Store"
+"npm-debug.log"
