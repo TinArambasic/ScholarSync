@@ -1,6 +1,5 @@
 # Student Forum
 
-# Student Forum" 
 1. Opis projekta
 Web aplikacija namijenjena studentima za postavljanje i odgovaranje na pitanja vezana uz kolegije na fakultetu. Sustav omogućuje organizaciju pitanja po godinama studija i kolegijima, autentikaciju korisnika, upload priloga, real-time komunikaciju te integraciju vanjskih API-ja.
 Cilj aplikacije je olakšati komunikaciju među studentima i omogućiti strukturirano postavljanje pitanja unutar pojedinog kolegija.
@@ -8,8 +7,7 @@ ________________________________________
 2. Tehnologije
 Frontend
 •	React
-• Tailwind
-•	React Router
+
 Backend
 •	Node.js
 •	Express
@@ -131,7 +129,6 @@ ________________________________________
 •	Glasanje za odgovore
 •	Sortiranje po popularnosti
 •	Email notifikacije
-
 ## Prerequisites
 - Node.js (v16+)
 - MongoDB running locally or a MongoDB Atlas URI
