@@ -1,0 +1,72 @@
+{
+  "questions": [],
+  "answers": [],
+  "users": [
+    {
+      "_id": "u1770309996209",
+      "username": "tarambas",
+      "email": "tin004@outlook.com",
+      "password": "Altiami72!",
+      "role": "student",
+      "joinedCourses": [],
+      "createdAt": "2026-02-05T16:46:36.209Z"
+    },
+    {
+      "_id": "u1770310439510",
+      "username": "admin",
+      "email": "admin@scholarsync.com",
+      "password": "admin@scholar",
+      "role": "student",
+      "joinedCourses": [],
+      "createdAt": "2026-02-05T16:53:59.510Z"
+    }
+  ],
+  "courses": [
+    { "_id": "I044", "title": "Funkcijsko programiranje", "year": 1, "type": "obavezni" },
+    { "_id": "M084", "title": "Diferencijalni račun", "year": 1, "type": "obavezni" },
+    { "_id": "Z011", "title": "Strani jezik u struci I", "year": 1, "type": "obavezni" },
+    { "_id": "M086", "title": "Linearna algebra I", "year": 1, "type": "obavezni" },
+    { "_id": "I056", "title": "Uvod u računalnu znanost", "year": 1, "type": "obavezni" },
+    { "_id": "I048", "title": "Objektno orijentirano programiranje", "year": 1, "type": "obavezni" },
+    { "_id": "M088", "title": "Matematička logika u računalnoj znanosti", "year": 1, "type": "obavezni" },
+    { "_id": "M085", "title": "Integralni račun", "year": 1, "type": "obavezni" },
+    { "_id": "M087", "title": "Linearna algebra II", "year": 1, "type": "obavezni" },
+    { "_id": "Z012", "title": "Strani jezik u struci II", "year": 1, "type": "obavezni" },
+    { "_id": "Z014", "title": "Tjelesna i zdravstvena kultura I", "year": 1, "type": "obavezni" },
+
+    { "_id": "M091", "title": "Primijenjena matematika za računalnu znanost", "year": 2, "type": "obavezni" },
+    { "_id": "I053", "title": "Strukture podataka i algoritmi I", "year": 2, "type": "obavezni" },
+    { "_id": "I045", "title": "Moderni računalni sustavi", "year": 2, "type": "obavezni" },
+    { "_id": "I046", "title": "Moderni sustavi baza podataka", "year": 2, "type": "obavezni" },
+    { "_id": "I054", "title": "Strukture podataka i algoritmi II", "year": 2, "type": "obavezni" },
+    { "_id": "M097", "title": "Teorijske osnove računalne znanosti", "year": 2, "type": "obavezni" },
+    { "_id": "Z015", "title": "Tjelesna i zdravstvena kultura II", "year": 2, "type": "obavezni" },
+
+    { "_id": "I049", "title": "Programiranje mobilnih aplikacija", "year": 2, "type": "izborni" },
+    { "_id": "I050", "title": "Računalne mreže", "year": 2, "type": "izborni" },
+    { "_id": "I055", "title": "Ugrađeni sustavi", "year": 2, "type": "izborni" },
+    { "_id": "I047", "title": "Natjecateljsko programiranje", "year": 2, "type": "izborni" },
+    { "_id": "M098", "title": "Uvod u vjerojatnost i statistiku", "year": 2, "type": "izborni" },
+    { "_id": "M099", "title": "Vektorski prostori", "year": 2, "type": "izborni" },
+    { "_id": "I059", "title": "3D računalna grafika", "year": 2, "type": "izborni" },
+    { "_id": "I043", "title": "Bioinformatika", "year": 2, "type": "izborni" },
+    { "_id": "M062", "title": "Primjene diferencijalnog i integralnog računa I", "year": 2, "type": "izborni" },
+    { "_id": "I051", "title": "Računalno jezikoslovlje", "year": 2, "type": "izborni" },
+    { "_id": "M141", "title": "Uvod u matematičku fiziku", "year": 2, "type": "izborni" },
+
+    { "_id": "I057", "title": "Web programiranje", "year": 3, "type": "obavezni" },
+    { "_id": "M090", "title": "Obične diferencijalne jednadžbe", "year": 3, "type": "obavezni" },
+    { "_id": "I058", "title": "Završni praktični projekt", "year": 3, "type": "obavezni" },
+    { "_id": "M096", "title": "Strojno učenje", "year": 3, "type": "obavezni" },
+    { "_id": "M089", "title": "Numerička matematika", "year": 3, "type": "obavezni" },
+    { "_id": "Z007", "title": "Završni rad", "year": 3, "type": "obavezni" },
+    { "_id": "I052", "title": "Softversko inženjerstvo", "year": 3, "type": "obavezni" },
+
+    { "_id": "M094", "title": "Realna analiza", "year": 3, "type": "izborni" },
+    { "_id": "Z013", "title": "Stručna praksa", "year": 3, "type": "izborni" },
+    { "_id": "M083", "title": "Algebra", "year": 3, "type": "izborni" },
+    { "_id": "M095", "title": "Statistički praktikum", "year": 3, "type": "izborni" },
+    { "_id": "M092", "title": "Osnove teorije upravljanja s primjenama", "year": 3, "type": "izborni" }
+  ],
+  "notifications": []
+}

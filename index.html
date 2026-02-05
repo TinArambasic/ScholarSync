@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarSync - Student Helpdesk</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        secondary: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/year-card.js"></script>
+    <script src="components/question-card.js"></script>
+    
+    <custom-navbar></custom-navbar>
+    
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="md:w-1/2 space-y-4">
+                        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                            Zajednica znanja za<br>
+                            <span class="text-secondary-400">mathos studente</span>
+                        </h1>
+                        <p class="text-lg text-primary-100 max-w-lg">
+                            Postavljaj pitanja, dijeli znanje i rastite zajedno. 
+                            Platforma za studente matematike i računarstva na Odjelu za matematiku.
+                        </p>
+                        <div class="flex gap-4 pt-4">
+                            <a href="register.html" class="bg-secondary-500 hover:bg-secondary-600 text-white px-6 py-3 rounded-lg font-semibold transition shadow-lg flex items-center gap-2">
+                                <i data-feather="user-plus" class="w-5 h-5"></i>
+                                Pridruži se
+                            </a>
+                            <a href="#years" class="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-semibold transition flex items-center gap-2 backdrop-blur-sm">
+                                <i data-feather="book-open" class="w-5 h-5"></i>
+                                Pregledaj kolegije
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="bg-white border-b border-gray-200 py-8 px-4 sticky top-0 z-30 shadow-sm">
+            <div class="container mx-auto max-w-4xl">
+                <div class="relative">
+                    <i data-feather="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"></i>
+                    <input type="text" id="searchInput" placeholder="Pretraži pitanja po naslovu, sadržaju ili kolegiju..." 
+                           class="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition text-lg shadow-sm">
+                </div>
+            </div>
+        </section>
+
+        <!-- Years Section -->
+        <section id="years" class="py-12 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                        <i data-feather="layers" class="text-primary-600"></i>
+                        Godine studija
+                    </h2>
+                    <span class="text-sm text-gray-500">Odaberite godinu za pregled kolegija</span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="yearsGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Questions -->
+        <section class="py-12 px-4 bg-gray-100">
+            <div class="container mx-auto max-w-6xl">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                        <i data-feather="message-circle" class="text-primary-600"></i>
+                        Najnovija pitanja
+                    </h2>
+                    <a href="questions.html" class="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-1">
+                        Sva pitanja <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="recentQuestions">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-12 px-4 bg-primary-900 text-white">
+            <div class="container mx-auto max-w-6xl">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-secondary-400" id="statUsers">0</div>
+                        <div class="text-sm text-primary-200">Registriranih studenata</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-secondary-400" id="statQuestions">0</div>
+                        <div class="text-sm text-primary-200">Postavljenih pitanja</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-secondary-400" id="statAnswers">0</div>
+                        <div class="text-sm text-primary-200">Odgovora</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-3xl font-bold text-secondary-400" id="statCourses">15</div>
+                        <div class="text-sm text-primary-200">Kolegija</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+        
+        // Load years data
+        const years = [
+            { id: 1, name: '1. godina', description: 'Osnove matematike i programiranja', courses: 5, color: 'blue' },
+            { id: 2, name: '2. godina', description: 'Napredna matematika i računarstvo', courses: 6, color: 'indigo' },
+            { id: 3, name: '3. godina', description: 'Specijalizacija i završni projekti', courses: 4, color: 'purple' }
+        ];
+
+        const yearsGrid = document.getElementById('yearsGrid');
+        years.forEach(year => {
+            const card = document.createElement('custom-year-card');
+            card.setAttribute('name', year.name);
+            card.setAttribute('description', year.description);
+            card.setAttribute('courses', year.courses);
+            card.setAttribute('color', year.color);
+            card.setAttribute('year-id', year.id);
+            yearsGrid.appendChild(card);
+        });
+
+        // Load recent questions
+        loadRecentQuestions();
+        updateStats();
+    </script>
+</body>
+</html>
