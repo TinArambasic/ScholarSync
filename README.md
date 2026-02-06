@@ -6,10 +6,8 @@ ________________________________________
 2. Tehnologije
 Frontend
 •	React
+• Tailwind
 •	React Router
-•	Bootstrap
-•	Axios
-•	Socket.io-client
 Backend
 •	Node.js
 •	Express
