@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import YearCard from '../components/YearCard'
 import QuestionCard from '../components/QuestionCard'
-import axios from 'axios'
+import api from '../api'
 import feather from 'feather-icons'
 import { useAuth } from '../context/AuthContext'
 
@@ -22,10 +22,10 @@ export default function Home(){
     async function fetchStats(){
       try{
         const [uRes, qRes, aRes, cRes] = await Promise.all([
-          axios.get('http://localhost:4000/api/users'),
-          axios.get('http://localhost:4000/api/questions'),
-          axios.get('http://localhost:4000/api/answers'),
-          axios.get('http://localhost:4000/api/courses')
+          api.get('/api/users'),
+          api.get('/api/questions'),
+          api.get('/api/answers'),
+          api.get('/api/courses')
         ])
 
         if(!mounted) return
@@ -57,9 +57,10 @@ export default function Home(){
 
     async function fetchQuestions(){
       try{
-        const qRes = await axios.get('http://localhost:4000/api/questions')
+        const qRes = await api.get('/api/questions')
         if(!mounted) return
-        setQuestions((qRes.data || []).slice(0,6))
+        const sorted = (qRes.data || []).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        setQuestions(sorted.slice(0,6))
       } catch(err){
         console.warn('Ne mogu dohvatiti pitanja', err)
         if(!mounted) return

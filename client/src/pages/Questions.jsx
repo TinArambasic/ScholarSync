@@ -9,7 +9,8 @@ export default function Questions() {
     async function load() {
       try {
         const res = await axios.get('/api/questions')
-        setQuestions(res.data)
+        const sorted = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+        setQuestions(sorted)
       } catch (err) {
         console.error(err)
       }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import axios from 'axios'
+import api from '../api'
 
 export default function YearCourses(){
   const { year } = useParams()
@@ -15,7 +15,7 @@ export default function YearCourses(){
 
     async function load(){
       try{
-        const res = await axios.get('http://localhost:4000/api/courses')
+        const res = await api.get('/api/courses')
         if(!mounted) return
         const filtered = (res.data || []).filter(c => Number(c.year) === Number(year))
         setCourses(filtered)
@@ -70,7 +70,12 @@ export default function YearCourses(){
                     <div className="text-sm text-gray-500 mt-1">{c.type === 'obavezni' ? 'Obavezni' : 'Izborni'}</div>
                   </div>
                   <div>
-                    <button className="text-sm bg-primary-600 text-white px-3 py-2 rounded hover:bg-primary-700">Detalji</button>
+                    <Link 
+                      to={`/courses/${c._id}`}
+                      className="text-sm bg-primary-600 text-white px-3 py-2 rounded hover:bg-primary-700 inline-block"
+                    >
+                      Pitanja
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import axios from 'axios'
+import api from '../api'
 import { useAuth } from '../context/AuthContext'
 
 export default function Login(){
@@ -17,9 +17,9 @@ export default function Login(){
     setLoading(true)
 
     try{
-      const res = await axios.post('http://localhost:4000/api/login', { username, password })
+      const res = await api.post('/api/login', { username, password })
       if(res.data.success){
-        login(res.data.user)
+        login(res.data.user, res.data.token)
         navigate('/')
       } else {
         setError(res.data.message || 'Greška pri prijavi')

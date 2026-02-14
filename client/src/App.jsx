@@ -8,6 +8,7 @@ import QuestionDetail from './pages/QuestionDetail'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import YearCourses from './pages/YearCourses'
+import CourseQuestions from './pages/CourseQuestions'
 import feather from 'feather-icons'
 import { AuthProvider } from './context/AuthContext'
 
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/questions" element={<Questions />} />
             <Route path="/questions/:id" element={<QuestionDetail />} />
             <Route path="/years/:year" element={<YearCourses />} />
+            <Route path="/courses/:courseId" element={<CourseQuestions />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import api from '../api'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
@@ -22,10 +22,10 @@ export default function Register(){
 
     setLoading(true)
     try{
-      const res = await axios.post('http://localhost:4000/api/register', { username, email, password })
+      const res = await api.post('/api/register', { username, email, password })
       if(res.data.success){
         // Auto-login after register
-        login(res.data.user)
+        login(res.data.user, res.data.token)
         navigate('/')
       } else {
         setError(res.data.message || 'Greška pri registracij')
