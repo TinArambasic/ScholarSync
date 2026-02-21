@@ -1,5 +1,9 @@
 # Student Forum
 
+<<<<<<< Updated upstream
+=======
+# Student Forum" 
+>>>>>>> Stashed changes
 1. Opis projekta
 Web aplikacija namijenjena studentima za postavljanje i odgovaranje na pitanja vezana uz kolegije na fakultetu. Sustav omogućuje organizaciju pitanja po godinama studija i kolegijima, autentikaciju korisnika, upload priloga, real-time komunikaciju te integraciju vanjskih API-ja.
 Cilj aplikacije je olakšati komunikaciju među studentima i omogućiti strukturirano postavljanje pitanja unutar pojedinog kolegija.
@@ -122,6 +126,17 @@ ________________________________________
 •	Validacija podataka na backendu
 ________________________________________
 10. Deploy
+<<<<<<< Updated upstream
+=======
+
+________________________________________
+11. Moguća proširenja
+•	Admin panel
+•	Označavanje odgovora kao “riješeno”
+•	Glasanje za odgovore
+•	Sortiranje po popularnosti
+•	Email notifikacije
+>>>>>>> Stashed changes
 
 ________________________________________
 11. Moguća proširenja
