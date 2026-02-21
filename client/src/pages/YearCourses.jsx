@@ -1,12 +1,60 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import api from '../api'
+import LoadingSkeleton from '../components/LoadingSkeleton'
+import { usePageLoading } from '../hooks/usePageLoading'
 
 export default function YearCourses(){
-  const { year } = useParams()
+  const { year, studyType, programId } = useParams()
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(false)
+  const isPageLoading = usePageLoading()
   const [error, setError] = useState('')
+  const mathPlanTitles = new Set([
+    'Diferencijalni račun',
+    'Strani jezik u struci I',
+    'Uvod u računalnu znanost',
+    'Elementarna matematika',
+    'Linearna algebra I',
+    'Integralni račun',
+    'Linearna algebra II',
+    'Strani jezik u struci II',
+    'Elementarna geometrija',
+    'Kombinatorna i diskretna matematika',
+    'Tjelesna i zdravstvena kultura I',
+    'Funkcije više varijabli',
+    'Matematički alati',
+    'Numerička matematika',
+    'Uvod u vjerojatnost i statistiku',
+    'Kompleksna analiza',
+    'Statistički praktikum',
+    'Teorija brojeva',
+    'Tjelesna i zdravstvena kultura II',
+    'Osnove fizike I',
+    'Strukture podataka i algoritmi I',
+    'Osnove fizike II',
+    'Objektno orijentirano programiranje',
+    'Teorijske osnove računalne znanosti',
+    'Matematička logika u računalnoj znanosti',
+    'Primjene diferencijalnog i integralnog računa I',
+    'Obične diferencijalne jednadžbe',
+    'Realna analiza',
+    'Završni rad',
+    'Algebra',
+    'Osnove fizike III',
+    'Moderni računalni sustavi',
+    'Web programiranje',
+    'Uvod u diferencijalnu geometriju',
+    'Vektorski prostori',
+    'Primjene diferencijalnog i integralnog računa II',
+    'Osnove fizike IV',
+    'Moderni sustavi baza podataka',
+    'Strukture podataka i algoritmi II',
+    'Strojno učenje',
+    'Teorija skupova',
+    'Metode matematičke fizike',
+    'Osnove teorije upravljanja s primjenama'
+  ])
 
   useEffect(() => {
     let mounted = true
@@ -17,7 +65,17 @@ export default function YearCourses(){
       try{
         const res = await api.get('/api/courses')
         if(!mounted) return
-        const filtered = (res.data || []).filter(c => Number(c.year) === Number(year))
+        const programKey = studyType && programId ? `${studyType}-${programId}` : null
+        const filtered = (res.data || []).filter(c => {
+          if (!programKey) return Number(c.year) === Number(year)
+
+          const programYear = c.programYears?.[programKey]
+          const baseYear = programYear ?? c.year
+          const programMatch = Array.isArray(c.programs) && c.programs.includes(programKey)
+          const isMathPlanOverlap = programKey === 'preddiplomski-matematika' && mathPlanTitles.has(c.title)
+
+          return Number(baseYear) === Number(year) && (programMatch || isMathPlanOverlap)
+        })
         setCourses(filtered)
       } catch(err){
         console.warn('Ne mogu dohvatiti kolegije', err)
@@ -40,11 +98,20 @@ export default function YearCourses(){
   }
 
   return (
-    <main className="min-h-screen mx-auto py-12 px-4">
+    <>
+      {isPageLoading ? (
+        <LoadingSkeleton />
+      ) : (
+        <main className="min-h-screen mx-auto py-12 px-4">
       <div className="container mx-auto max-w-4xl">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold ml-4">Kolegiji — {yearLabel(year)}</h2>
-          <Link to="/" className="text-sm bg-primary-600 text-white px-3 py-2 mr-5 rounded hover:bg-primary-700">Nazad</Link>
+          <Link
+            to={studyType && programId ? `/programs/${studyType}/${programId}` : '/'}
+            className="text-sm bg-primary-600 text-white px-3 py-2 mr-5 rounded hover:bg-primary-700"
+          >
+            Nazad
+          </Link>
         </div>
 
         <div className="bg-white rounded-lg shadow p-6">
@@ -83,6 +150,8 @@ export default function YearCourses(){
           </div>
         </div>
       </div>
-    </main>
+        </main>
+      )}
+    </>
   )
 }

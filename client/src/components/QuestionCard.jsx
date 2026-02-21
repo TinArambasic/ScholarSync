@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { API_URL } from '../config'
 
-export default function QuestionCard({ id, title, content, author, course, date, answersCount, attachment }) {
+export default function QuestionCard({ id, title, content, author, authorId, course, date, answersCount, attachment, isCompleted }) {
   return (
     <div className="bg-white rounded-lg p-4 shadow hover:shadow-lg transition border border-gray-200">
       <div className="flex justify-between items-start mb-2">
@@ -14,7 +14,12 @@ export default function QuestionCard({ id, title, content, author, course, date,
             </svg>
           )}
         </div>
-        <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{course}</span>
+        <div className="flex gap-2">
+          <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{course}</span>
+          {isCompleted && (
+            <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded font-semibold">✓ Dovršeno</span>
+          )}
+        </div>
       </div>
       <p className="text-gray-600 text-sm mb-3 line-clamp-2">{content}</p>
       
@@ -41,7 +46,7 @@ export default function QuestionCard({ id, title, content, author, course, date,
       )}
       
       <div className="flex justify-between items-center text-sm text-gray-500">
-        <div>{author} • {date}</div>
+        <div>{authorId ? <Link to={`/users/${authorId}`} className="text-primary-600 hover:text-primary-700 font-medium">{author}</Link> : author} • {date}</div>
         <div className="text-green-600 font-semibold">{answersCount} odgovora</div>
       </div>
     </div>

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import api from '../api'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import LoadingSkeleton from '../components/LoadingSkeleton'
+import { usePageLoading } from '../hooks/usePageLoading'
 
 export default function Register(){
   const [username, setUsername] = useState('')
@@ -10,6 +12,7 @@ export default function Register(){
   const [confirm, setConfirm] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const isPageLoading = usePageLoading()
   const navigate = useNavigate()
   const { login } = useAuth()
 
@@ -38,7 +41,11 @@ export default function Register(){
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center px-4 py-10 bg-gray-50">
+    <>
+      {isPageLoading ? (
+        <LoadingSkeleton />
+      ) : (
+        <main className="min-h-screen flex items-center justify-center px-4 py-10 bg-gray-50">
       <div className="w-full max-w-md">
         <div className="bg-white p-8 rounded-2xl shadow">
           <h2 className="text-2xl font-bold mb-2 text-center">Registracija</h2>
@@ -75,5 +82,7 @@ export default function Register(){
         </div>
       </div>
     </main>
+      )}
+    </>
   )
 }

@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import api from '../api'
 import { useAuth } from '../context/AuthContext'
+import LoadingSkeleton from '../components/LoadingSkeleton'
+import { usePageLoading } from '../hooks/usePageLoading'
 
 export default function Login(){
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const isPageLoading = usePageLoading()
   const navigate = useNavigate()
   const { login } = useAuth()
 
@@ -32,13 +35,21 @@ export default function Login(){
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4">
+    <>
+      {isPageLoading ? (
+        <LoadingSkeleton />
+      ) : (
+        <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">Prijava</h2>
           <p className="text-center text-gray-500 text-sm mb-8">Unesite vaše podatke za prijavu</p>
 
-          {error && <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6 text-sm">{error}</div>}
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6 text-sm">
+              {error}
+            </div>
+          )}
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
@@ -82,12 +93,10 @@ export default function Login(){
           <Link to="/register" className="w-full block text-center bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
             Registriraj se
           </Link>
-
-          <p className="text-center text-gray-600 text-sm mt-6">
-            Demo korisnik: <span className="font-mono text-gray-800">demo / demo123</span>
-          </p>
         </div>
       </div>
     </main>
+      )}
+    </>
   )
 }

@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import QuestionCard from '../components/QuestionCard'
+import LoadingSkeleton from '../components/LoadingSkeleton'
 import api from '../api'
 import { useAuth } from '../context/AuthContext'
+import { usePageLoading } from '../hooks/usePageLoading'
 
 export default function CourseQuestions() {
   const { courseId } = useParams()
+  const navigate = useNavigate()
   const [questions, setQuestions] = useState([])
   const [course, setCourse] = useState(null)
   const [loading, setLoading] = useState(true)
+  const isPageLoading = usePageLoading()
   const [error, setError] = useState('')
   const [showNewQuestion, setShowNewQuestion] = useState(false)
   const [newTitle, setNewTitle] = useState('')
@@ -16,11 +20,20 @@ export default function CourseQuestions() {
   const [selectedFile, setSelectedFile] = useState(null)
   const [previewUrl, setPreviewUrl] = useState(null)
   const [submitting, setSubmitting] = useState(false)
+  const [isJoined, setIsJoined] = useState(false)
+  const [joiningLoading, setJoiningLoading] = useState(false)
   const { user } = useAuth()
 
   useEffect(() => {
     loadData()
   }, [courseId])
+
+  useEffect(() => {
+    // Check if user is joined to this course
+    if (user && user.joinedCourses) {
+      setIsJoined(user.joinedCourses.includes(courseId))
+    }
+  }, [user, courseId])
 
   useEffect(() => {
     // Cleanup previous preview URL
@@ -102,8 +115,49 @@ export default function CourseQuestions() {
     }
   }
 
+  async function handleJoinCourse() {
+    if (!user) {
+      navigate('/login')
+      return
+    }
+
+    setJoiningLoading(true)
+    try {
+      await api.post(`/api/courses/${courseId}/join`)
+      setIsJoined(true)
+      // Update user context with new joinedCourses
+      const updatedUser = { ...user, joinedCourses: [...(user.joinedCourses || []), courseId] }
+      localStorage.setItem('currentUser', JSON.stringify(updatedUser))
+      window.dispatchEvent(new StorageEvent('storage', { key: 'currentUser', newValue: JSON.stringify(updatedUser) }))
+    } catch (err) {
+      alert(err.response?.data?.message || 'Greška pri pridruživanju kolegiju')
+    } finally {
+      setJoiningLoading(false)
+    }
+  }
+
+  async function handleUnjoinCourse() {
+    setJoiningLoading(true)
+    try {
+      await api.post(`/api/courses/${courseId}/unjoin`)
+      setIsJoined(false)
+      // Update user context
+      const updatedUser = { ...user, joinedCourses: (user.joinedCourses || []).filter(id => id !== courseId) }
+      localStorage.setItem('currentUser', JSON.stringify(updatedUser))
+      window.dispatchEvent(new StorageEvent('storage', { key: 'currentUser', newValue: JSON.stringify(updatedUser) }))
+    } catch (err) {
+      alert(err.response?.data?.message || 'Greška pri napuštanju kolegija')
+    } finally {
+      setJoiningLoading(false)
+    }
+  }
+
   return (
-    <main className="min-h-screen bg-gray-50 py-8 px-4">
+    <>
+      {isPageLoading ? (
+        <LoadingSkeleton />
+      ) : (
+        <main className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="container mx-auto max-w-4xl">
         <div className="flex items-center justify-between mb-6">
           <div>
@@ -121,12 +175,38 @@ export default function CourseQuestions() {
           </div>
           
           {user && (
-            <button
-              onClick={() => setShowNewQuestion(!showNewQuestion)}
-              className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
-            >
-              <span>+</span> Novo pitanje
-            </button>
+            <div className="flex gap-3">
+              {isJoined ? (
+                <button
+                  onClick={handleUnjoinCourse}
+                  disabled={joiningLoading}
+                  className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg font-semibold flex items-center gap-2 disabled:opacity-50"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Pridružen
+                </button>
+              ) : (
+                <button
+                  onClick={handleJoinCourse}
+                  disabled={joiningLoading}
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 disabled:opacity-50"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                  Pridruži se
+                </button>
+              )}
+              
+              <button
+                onClick={() => navigate(`/courses/${courseId}/ask`)}
+                className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
+              >
+                <span>+</span> Novo pitanje
+              </button>
+            </div>
           )}
         </div>
 
@@ -247,11 +327,14 @@ export default function CourseQuestions() {
                 date={new Date(q.createdAt).toLocaleString()} 
                 answersCount={q.answersCount || 0}
                 attachment={q.attachment}
+                isCompleted={q.isCompleted}
               />
             ))}
           </div>
         )}
       </div>
-    </main>
+        </main>
+      )}
+    </>
   )
 }

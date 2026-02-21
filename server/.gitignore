@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*
+!.env.example
+
+# Logs and runtime files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.pid
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Local/generated data
+data/db.json
+
+# Uploaded user files
+uploads/*
+!uploads/.gitignore

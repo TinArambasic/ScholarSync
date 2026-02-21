@@ -47,7 +47,7 @@ export default function UserProfile() {
       setProfileUser(user)
       setCourses(coursesRes.data)
       
-      // Filter
+      // Filter user's questions and answers
       const questions = questionsRes.data.filter(q => q.userId === userId)
       const answers = answersRes.data.filter(a => a.userId === userId)
       
