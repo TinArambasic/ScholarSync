@@ -91,7 +91,7 @@ export default function Profile() {
                   className="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-gray-50 transition shadow-sm"
                   title="Uredi profil"
                 >
-                  ✏️
+                  Edit
                 </button>
               </div>
 
