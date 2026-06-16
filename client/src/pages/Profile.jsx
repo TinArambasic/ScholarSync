@@ -7,7 +7,7 @@ import LoadingSkeleton from '../components/LoadingSkeleton'
 import { usePageLoading } from '../hooks/usePageLoading'
 
 export default function Profile() {
-  const { user } = useAuth()
+  const { user, logout } = useAuth()
   const navigate = useNavigate()
   const isLoading = usePageLoading()
   
@@ -221,9 +221,8 @@ export default function Profile() {
                 <div className="flex justify-end pt-8 border-t border-gray-200">
                   <button
                     onClick={() => { 
-                      localStorage.removeItem('authToken')
-                      localStorage.removeItem('currentUser')
-                      navigate('/login')
+                      logout()
+                      navigate('/')
                     }}
                     className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition font-medium"
                   >

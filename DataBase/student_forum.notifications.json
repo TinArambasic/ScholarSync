@@ -1,0 +1,45 @@
+[{
+  "_id": "n_1771945932648",
+  "userId": "u1771264407390",
+  "type": "like_question",
+  "message": "TinArambasic je lajkao tvoje pitanje: Kako postaviti docker",
+  "link": "/questions/q1771265030840",
+  "createdAt": "2026-02-24T15:12:12.648Z",
+  "read": true
+},
+{
+  "_id": "n_1771945964311",
+  "userId": "u1771264407390",
+  "type": "like_question",
+  "message": "TinArambasic je lajkao tvoje pitanje: Kako postaviti docker",
+  "link": "/questions/q1771265030840",
+  "createdAt": "2026-02-24T15:12:44.311Z",
+  "read": true
+},
+{
+  "_id": "n_1771946126916",
+  "userId": "u1771262310781",
+  "type": "like_answer",
+  "message": "testuser je lajkao tvoj odgovor",
+  "link": "/answers/a1771716819175",
+  "createdAt": "2026-02-24T15:15:26.916Z",
+  "read": true
+},
+{
+  "_id": "n_1771946287572",
+  "userId": "u1771262310781",
+  "type": "answer",
+  "message": "testuser je odgovorio na tvoje pitanje: Test pitanje",
+  "link": "/questions/q1771946274818",
+  "createdAt": "2026-02-24T15:18:07.572Z",
+  "read": true
+},
+{
+  "_id": "n_1771946300454",
+  "userId": "u1771264407390",
+  "type": "like_answer",
+  "message": "TinArambasic je lajkao tvoj odgovor",
+  "link": "/answers/a1771946287570",
+  "createdAt": "2026-02-24T15:18:20.454Z",
+  "read": true
+}]

@@ -1,0 +1,37 @@
+[{
+  "_id": "u1770310439510",
+  "username": "admin",
+  "email": "admin@scholarsync.com",
+  "password": "admin@scholar",
+  "role": "admin",
+  "joinedCourses": [],
+  "createdAt": "2026-02-05T16:53:59.510Z",
+  "emailVerified": true
+},
+{
+  "_id": "u1771262310781",
+  "username": "TinArambasic",
+  "email": "tin.arambasic72@gmail.com",
+  "password": "$2a$10$1VoHhdQFnKTr/XyTnjRdteRae5tq/eBkliHZJTVt4vHct1KSsMNFm",
+  "role": "Founder",
+  "joinedCourses": [
+    "I057"
+  ],
+  "bio": "Student treće godine Matematike i Računalstva\r\nKreator stranice ScholarSync",
+  "profilePicture": "/uploads/ok-2-1771262717384-567449612.jpg",
+  "createdAt": "2026-02-16T17:18:30.781Z",
+  "emailVerified": true
+},
+{
+  "_id": "u1771264407390",
+  "username": "testuser",
+  "email": "focalphotography04@gmail.com",
+  "password": "$2a$10$S1e.mJPVYnGuta008IzG/emaWFTHmRlDXsEsz0/fyNwUkO/QXMxgG",
+  "role": "student",
+  "joinedCourses": [
+    "I057"
+  ],
+  "bio": "",
+  "profilePicture": "",
+  "createdAt": "2026-02-16T17:53:27.390Z"
+}]

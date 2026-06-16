@@ -16,6 +16,7 @@ export default function AddAnswer() {
   const [selectedFile, setSelectedFile] = useState(null)
   const [previewUrl, setPreviewUrl] = useState(null)
   const [submitting, setSubmitting] = useState(false)
+  const [suggesting, setSuggesting] = useState(false)
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -88,6 +89,32 @@ export default function AddAnswer() {
     }
   }
 
+  async function handleSuggestAnswer() {
+    if (!question) return
+
+    setSuggesting(true)
+    setError('')
+
+    try {
+      const res = await api.post('/api/answers/suggest', {
+        questionId: id,
+        draftContent: content.trim()
+      })
+
+      const suggestion = res.data?.suggestion?.trim()
+      if (!suggestion) {
+        setError('Nije moguće generirati prijedlog odgovora')
+        return
+      }
+
+      setContent(suggestion)
+    } catch (err) {
+      setError(err.response?.data?.message || 'Greška pri generiranju prijedloga odgovora')
+    } finally {
+      setSuggesting(false)
+    }
+  }
+
   if (!user) return null
 
   return (
@@ -129,14 +156,24 @@ export default function AddAnswer() {
                   <textarea
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                    placeholder="Napisi detaljna i korisna rješenja ili objašnjenja..."
+                    placeholder="Vaš odgovor..."
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition resize-none"
                     rows="8"
                     required
                   />
-                  <div className="flex justify-between items-center mt-2">
+                  <div className="flex justify-between items-center mt-2 gap-3">
                     <p className="text-xs text-gray-500">Najmanje 10 znakova</p>
-                    <p className="text-xs text-gray-600">{content.length} znakova</p>
+                    <div className="flex items-center gap-3">
+                      <p className="text-xs text-gray-600">{content.length} znakova</p>
+                      <button
+                        type="button"
+                        onClick={handleSuggestAnswer}
+                        disabled={suggesting || submitting}
+                        className="text-xs px-3 py-1.5 border border-primary-300 text-primary-700 rounded-md hover:bg-primary-50 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {suggesting ? 'Generiram...' : 'Predloži odgovor'}
+                      </button>
+                    </div>
                   </div>
                 </div>
 

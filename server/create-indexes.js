@@ -28,9 +28,9 @@ async function createIndexes() {
     await collection('courses').createIndex({ type: 1 })
     console.log('✓ Courses indexes created (year, type)')
 
-    console.log('\n✅ All indexes created successfully')
+    console.log('\n All indexes created successfully')
   } catch (err) {
-    console.error('❌ Index creation failed:', err.message)
+    console.error(' Index creation failed:', err.message)
   } finally {
     await client.close()
     process.exit()

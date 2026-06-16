@@ -7,7 +7,7 @@ import LoadingSkeleton from '../components/LoadingSkeleton'
 import { usePageLoading } from '../hooks/usePageLoading'
 
 export default function EditProfile() {
-  const { user, token } = useAuth()
+  const { user, logout } = useAuth()
   const navigate = useNavigate()
   const isLoading = usePageLoading()
   
@@ -88,57 +88,10 @@ export default function EditProfile() {
     
     try {
       await api.delete('/api/profile')
-      
-      // Clear all auth data
-      localStorage.removeItem('authToken')
-      localStorage.removeItem('currentUser')
-      
-      // Redirect to home with message
-      alert('Vaš profil je uspješno obrisan.')
-      window.location.href = '/'
-    } catch (err) {
-      console.error('Error deleting account:', err)
-      setError(err.response?.data?.message || 'Greška pri brisanju profila')
-    } finally {
-      setLoading(false)
-    }
-  }
 
-  async function handleDeleteAccount() {
-    const confirmed = window.confirm(
-      'UPOZORENJE: Ova radnja je nepovratna!\n\n' +
-      'Jeste li apsolutno sigurni da želite obrisati vaš profil?\n\n' +
-      'Ovo će trajno obrisati:\n' +
-      '- Vaš korisnički račun\n' +
-      '- Sva vaša pitanja\n' +
-      '- Sve vaše odgovore\n' +
-      '- Sve vaše podatke\n\n' +
-      'Ova akcija se NE MOŽE povratiti!'
-    )
-    
-    if (!confirmed) return
-    
-    const doubleConfirm = window.confirm(
-      'Molimo potvrdite još jednom:\n\n' +
-      'Da li ste potpuno sigurni da želite TRAJNO OBRISATI svoj profil?'
-    )
-    
-    if (!doubleConfirm) return
-    
-    setLoading(true)
-    setError('')
-    setSuccess('')
-    
-    try {
-      await api.delete('/api/profile')
-      
-      // Clear all auth data
-      localStorage.removeItem('authToken')
-      localStorage.removeItem('currentUser')
-      
-      // Redirect to home with message
+      logout()
       alert('Vaš profil je uspješno obrisan.')
-      window.location.href = '/'
+      navigate('/')
     } catch (err) {
       console.error('Error deleting account:', err)
       setError(err.response?.data?.message || 'Greška pri brisanju profila')
@@ -237,7 +190,7 @@ export default function EditProfile() {
         }
         localStorage.setItem('currentUser', JSON.stringify(updatedUser))
         
-        // Osvježi stranicu nakon 1.5 sekunde da vidiš promjene
+        // Osvježi stranicu nakon 1.5 sekunde
         setTimeout(() => {
           window.location.href = '/profile'
         }, 1500)

@@ -17,7 +17,7 @@ export default function Home(){
   const { user } = useAuth()
   const isLoading = usePageLoading()
 
-  // Poll stats always (visible even if user not logged in)
+  // Stats
   useEffect(() => {
     let mounted = true
 
@@ -145,7 +145,7 @@ export default function Home(){
       {user ? (
         <>
           {/* Search */}
-          <section className="bg-white border-b border-gray-200 py-8 px-4 sticky top-0 z-30 shadow-sm">
+          <section className="bg-white border-b border-gray-200 py-4 px-4 top-0 z-30 shadow-sm">
         <div className="container mx-auto max-w-4xl">
           <div className="relative">
             <svg className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">

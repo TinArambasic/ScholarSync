@@ -8,6 +8,7 @@ import { usePageLoading } from '../hooks/usePageLoading'
 export default function Login(){
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const isPageLoading = usePageLoading()
@@ -66,14 +67,36 @@ export default function Login(){
 
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">Lozinka</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Unesite lozinku"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
-                required
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Unesite lozinku"
+                  className="w-full pr-12 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-gray-700"
+                  aria-label={showPassword ? 'Sakrij lozinku' : 'Prikazi lozinku'}
+                >
+                  {showPassword ? (
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 3l18 18" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.477 10.477a3 3 0 004.243 4.243" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.88 5.093A9.96 9.96 0 0112 5c5 0 9.27 3.11 11 7-0.74 1.667-2.08 3.111-3.78 4.167" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6.228 6.228C4.197 7.373 2.723 9.083 1 12c1.73 3.89 6 7 11 7 1.2 0 2.36-0.2 3.45-0.57" />
+                    </svg>
+                  ) : (
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M1 12c1.73-3.89 6-7 11-7s9.27 3.11 11 7c-1.73 3.89-6 7-11 7S2.73 15.89 1 12z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
 
             <button

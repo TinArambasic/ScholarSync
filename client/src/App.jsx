@@ -18,6 +18,7 @@ import AnswerDetail from './pages/AnswerDetail'
 import Profile from './pages/Profile'
 import UserProfile from './pages/UserProfile'
 import EditProfile from './pages/EditProfile'
+import Notifications from './pages/Notifications'
 import { AuthProvider } from './context/AuthContext'
 
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/profile/edit" element={<EditProfile />} />
+              <Route path="/notifications" element={<Notifications />} />
               <Route path="/users/:userId" element={<UserProfile />} />
             </Routes>
           </main>

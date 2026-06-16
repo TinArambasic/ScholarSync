@@ -21,6 +21,10 @@ cp .env.example .env
 ```
 Edit `.env` to configure MongoDB URI if needed (default: `mongodb://127.0.0.1:27017/student_forum`)
 
+If you want AI suggestions on the Add Answer page, also set:
+- `OPENAI_API_KEY=<your_openai_api_key>`
+- Optional: `OPENAI_MODEL=gpt-4.1-mini`
+
 3. Migrate initial data from `data/db.json`:
 ```bash
 npm run migrate

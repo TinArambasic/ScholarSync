@@ -2,14 +2,26 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
+const http = require('http')
+const { Server } = require('socket.io')
 const bcrypt = require('bcryptjs')
+const OpenAI = require('openai')
 const { connect, collection } = require('./db')
 const { validateEmail, validateUsername, validatePassword, validateRequired, sanitizeString } = require('./validation')
-const { generateToken, verifyToken, optionalAuth } = require('./auth')
+const { generateToken, verifyToken, optionalAuth, verifySocketToken } = require('./auth')
 const upload = require('./upload')
 
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+  : null
+
+const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean)
+
 const app = express()
-app.use(cors())
+app.use(cors({ origin: allowedOrigins }))
 app.use(express.json({ limit: '50mb' }))
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
@@ -19,6 +31,63 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 // Helper to start server after DB connects
 async function start() {
   await connect()
+
+  const httpServer = http.createServer(app)
+  const io = new Server(httpServer, {
+    cors: {
+      origin: allowedOrigins,
+      methods: ['GET', 'POST', 'PATCH', 'DELETE']
+    }
+  })
+
+  io.use((socket, next) => {
+    const token = socket.handshake.auth?.token
+    if (!token) {
+      return next(new Error('Unauthorized'))
+    }
+
+    try {
+      const user = verifySocketToken(token)
+      socket.user = user
+      return next()
+    } catch (err) {
+      return next(new Error('Unauthorized'))
+    }
+  })
+
+  io.on('connection', (socket) => {
+    if (socket.user?._id) {
+      socket.join(`user:${socket.user._id}`)
+    }
+  })
+
+  const emitNotification = (userId, payload) => {
+    if (!userId) return
+    io.to(`user:${userId}`).emit('notification', payload)
+  }
+
+  const createNotification = async (userId, payload) => {
+    if (!userId) return null
+    const doc = {
+      _id: payload.id || `n_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+      userId,
+      type: payload.type,
+      message: payload.message,
+      link: payload.link,
+      createdAt: payload.createdAt || new Date().toISOString(),
+      read: false
+    }
+
+    try {
+      await collection('notifications').insertOne(doc)
+      emitNotification(userId, doc)
+      return doc
+    } catch (err) {
+      console.error('Error creating notification:', err)
+      emitNotification(userId, doc)
+      return null
+    }
+  }
 
   // Questions
   app.get('/api/questions', optionalAuth, async (req, res) => {
@@ -166,24 +235,29 @@ async function start() {
       
       if(!question) return res.status(404).json({ message: 'Question not found' })
       
-      const likes = question.likes || []
-      const hasLiked = likes.includes(userId)
-      
-      if (hasLiked) {
-        // Unlike - remove user from likes array
+      const likeResult = await collection('questions').updateOne(
+        { _id: id, likes: { $ne: userId } },
+        { $addToSet: { likes: userId } }
+      )
+
+      const didLike = likeResult.modifiedCount === 1
+      if (!didLike) {
         await collection('questions').updateOne(
-          { _id: id },
+          { _id: id, likes: userId },
           { $pull: { likes: userId } }
         )
-      } else {
-        // Like - add user to likes array
-        await collection('questions').updateOne(
-          { _id: id },
-          { $addToSet: { likes: userId } }
-        )
       }
-      
+
       const updated = await collection('questions').findOne({ _id: id })
+      if (didLike && question.userId !== userId) {
+        await createNotification(question.userId, {
+          id: `n_${Date.now()}`,
+          type: 'like_question',
+          message: `${req.user.username} je lajkao tvoje pitanje: ${question.title}`,
+          link: `/questions/${id}`,
+          createdAt: new Date().toISOString()
+        })
+      }
       res.json(updated)
     } catch (err) { 
       console.error('Error toggling question like:', err)
@@ -255,9 +329,80 @@ async function start() {
         { _id: questionId },
         { $inc: { answersCount: 1 } }
       )
+
+      const question = await collection('questions').findOne({ _id: questionId })
+      if (question && question.userId !== req.user._id) {
+        await createNotification(question.userId, {
+          id: `n_${Date.now()}`,
+          type: 'answer',
+          message: `${req.user.username} je odgovorio na tvoje pitanje: ${question.title}`,
+          link: `/questions/${questionId}`,
+          createdAt: new Date().toISOString()
+        })
+      }
       
       res.json(answer)
     } catch (err) { res.status(500).json({ message: 'DB error' }) }
+  })
+
+  app.post('/api/answers/suggest', verifyToken, async (req, res) => {
+    try {
+      if (!openai) {
+        return res.status(503).json({ message: 'OpenAI nije konfiguriran na serveru' })
+      }
+
+      const questionId = sanitizeString(req.body?.questionId)
+      const draftContent = sanitizeString(req.body?.draftContent || '')
+
+      if (!validateRequired(questionId)) {
+        return res.status(400).json({ message: 'ID pitanja je obavezan' })
+      }
+
+      const question = await collection('questions').findOne({ _id: questionId })
+      if (!question) {
+        return res.status(404).json({ message: 'Pitanje nije pronađeno' })
+      }
+
+      const response = await openai.responses.create({
+        model: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
+        temperature: 0.7,
+        max_output_tokens: 450,
+        input: [
+          {
+            role: 'system',
+            content: [
+              {
+                type: 'input_text',
+                text: 'Ti si studentski asistent. Napiši koristan, jasan i praktičan odgovor na hrvatskom jeziku. Odgovor treba biti spreman za objavu na forumu, bez spominjanja da ga je generirao AI.'
+              }
+            ]
+          },
+          {
+            role: 'user',
+            content: [
+              {
+                type: 'input_text',
+                text: `Naslov pitanja: ${question.title}\n\nSadržaj pitanja: ${question.content}\n\nMoj trenutni nacrt odgovora (ako postoji): ${draftContent || 'Nema nacrta.'}\n\nNapiši predloženi odgovor od 3 do 8 rečenica.`
+              }
+            ]
+          }
+        ]
+      })
+
+      const suggestion = (response.output_text || '').trim()
+      if (!suggestion) {
+        return res.status(502).json({ message: 'Nije moguće generirati prijedlog odgovora' })
+      }
+
+      res.json({ suggestion })
+    } catch (err) {
+      const statusCode = err?.status || 500
+      if (statusCode === 429) {
+        return res.status(429).json({ message: 'Previše zahtjeva prema AI servisu. Pokušaj ponovno uskoro.' })
+      }
+      console.error('Error generating suggested answer:', err)
+      res.status(500).json({ message: 'Greška pri generiranju prijedloga odgovora' })
+    }
   })
 
   app.patch('/api/answers/:id', verifyToken, async (req, res) => {
@@ -310,28 +455,82 @@ async function start() {
       
       if(!answer) return res.status(404).json({ message: 'Answer not found' })
       
-      const likes = answer.likes || []
-      const hasLiked = likes.includes(userId)
-      
-      if (hasLiked) {
-        // Unlike - remove user from likes array
+      const likeResult = await collection('answers').updateOne(
+        { _id: id, likes: { $ne: userId } },
+        { $addToSet: { likes: userId } }
+      )
+
+      const didLike = likeResult.modifiedCount === 1
+      if (!didLike) {
         await collection('answers').updateOne(
-          { _id: id },
+          { _id: id, likes: userId },
           { $pull: { likes: userId } }
         )
-      } else {
-        // Like - add user to likes array
-        await collection('answers').updateOne(
-          { _id: id },
-          { $addToSet: { likes: userId } }
-        )
       }
-      
+
       const updated = await collection('answers').findOne({ _id: id })
+      if (didLike && answer.userId !== userId) {
+        await createNotification(answer.userId, {
+          id: `n_${Date.now()}`,
+          type: 'like_answer',
+          message: `${req.user.username} je lajkao tvoj odgovor`,
+          link: `/answers/${id}`,
+          createdAt: new Date().toISOString()
+        })
+      }
       res.json(updated)
     } catch (err) { 
       console.error('Error toggling answer like:', err)
       res.status(500).json({ message: 'DB error' }) 
+    }
+  })
+
+  // Notifications
+  app.get('/api/notifications', verifyToken, async (req, res) => {
+    try {
+      const docs = await collection('notifications')
+        .find({ userId: req.user._id })
+        .sort({ createdAt: -1 })
+        .limit(50)
+        .toArray()
+      res.json(docs)
+    } catch (err) {
+      res.status(500).json({ message: 'DB error' })
+    }
+  })
+
+  app.patch('/api/notifications/:id', verifyToken, async (req, res) => {
+    try {
+      const id = req.params.id
+      const update = {}
+      if (typeof req.body.read === 'boolean') {
+        update.read = req.body.read
+      }
+      if (Object.keys(update).length === 0) {
+        return res.status(400).json({ message: 'No valid fields to update' })
+      }
+
+      await collection('notifications').updateOne(
+        { _id: id, userId: req.user._id },
+        { $set: update }
+      )
+      const updated = await collection('notifications').findOne({ _id: id, userId: req.user._id })
+      if (!updated) return res.status(404).json({ message: 'Not found' })
+      res.json(updated)
+    } catch (err) {
+      res.status(500).json({ message: 'DB error' })
+    }
+  })
+
+  app.post('/api/notifications/read-all', verifyToken, async (req, res) => {
+    try {
+      await collection('notifications').updateMany(
+        { userId: req.user._id, read: { $ne: true } },
+        { $set: { read: true } }
+      )
+      res.json({ success: true })
+    } catch (err) {
+      res.status(500).json({ message: 'DB error' })
     }
   })
 
@@ -653,20 +852,30 @@ async function start() {
   app.delete('/api/profile', verifyToken, async (req, res) => {
     try {
       const userId = req.user._id
+      const userQuestions = await collection('questions').find({ userId }).toArray()
+      const userQuestionIds = userQuestions.map((question) => question._id)
       
-      // Get all user's answers to update question counts
-      const userAnswers = await collection('answers').find({ userId }).toArray()
+      // Get all user's answers on questions that will remain
+      const remainingAnswersFilter = userQuestionIds.length > 0
+        ? { userId, questionId: { $nin: userQuestionIds } }
+        : { userId }
+      const userAnswersOnRemainingQuestions = await collection('answers').find(remainingAnswersFilter).toArray()
       
-      // Decrement answersCount for each question that has user's answer
-      for (const answer of userAnswers) {
+      // Decrement answersCount for each remaining question that has user's answer
+      for (const answer of userAnswersOnRemainingQuestions) {
         await collection('questions').updateOne(
           { _id: answer.questionId },
           { $inc: { answersCount: -1 } }
         )
       }
+
+      // Delete all answers on user's questions
+      if (userQuestionIds.length > 0) {
+        await collection('answers').deleteMany({ questionId: { $in: userQuestionIds } })
+      }
       
-      // Delete all user's answers
-      await collection('answers').deleteMany({ userId })
+      // Delete all remaining user's answers (on other users' questions)
+      await collection('answers').deleteMany(remainingAnswersFilter)
       
       // Delete all user's questions
       await collection('questions').deleteMany({ userId })
@@ -682,7 +891,7 @@ async function start() {
   })
 
   const PORT = process.env.PORT || 4000
-  app.listen(PORT, () => console.log(`API listening on ${PORT}`))
+  httpServer.listen(PORT, () => console.log(`API listening on ${PORT}`))
 }
 
 start().catch(err => {

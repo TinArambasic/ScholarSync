@@ -1,0 +1,1844 @@
+[{
+  "_id": "I044",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  },
+  "title": "Funkcijsko programiranje",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "M084",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 1
+  },
+  "title": "Diferencijalni račun",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "Z011",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 1
+  },
+  "title": "Strani jezik u struci I",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "M086",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 1
+  },
+  "title": "Linearna algebra I",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "I056",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 1
+  },
+  "title": "Uvod u računalnu znanost",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "I048",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 2,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  },
+  "title": "Objektno orijentirano programiranje",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "M088",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 2
+  },
+  "title": "Matematička logika u računalnoj znanosti",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "M085",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 1
+  },
+  "title": "Integralni račun",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "M087",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 1
+  },
+  "title": "Linearna algebra II",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "Z012",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 1
+  },
+  "title": "Strani jezik u struci II",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "Z014",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 1,
+    "preddiplomski-matematika": 1
+  },
+  "title": "Tjelesna i zdravstvena kultura I",
+  "year": 1,
+  "type": "obavezni"
+},
+{
+  "_id": "M091",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2
+  },
+  "title": "Primijenjena matematika za računalnu znanost",
+  "year": 2,
+  "type": "obavezni"
+},
+{
+  "_id": "I053",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "preddiplomski-matematika": 2
+  },
+  "title": "Strukture podataka i algoritmi I",
+  "year": 2,
+  "type": "obavezni"
+},
+{
+  "_id": "I045",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "preddiplomski-matematika": 3
+  },
+  "title": "Moderni računalni sustavi",
+  "year": 2,
+  "type": "obavezni"
+},
+{
+  "_id": "I046",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "preddiplomski-matematika": 3,
+    "diplomski-financijska-matematika": 5
+  },
+  "title": "Moderni sustavi baza podataka",
+  "year": 2,
+  "type": "obavezni"
+},
+{
+  "_id": "I054",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "preddiplomski-matematika": 3
+  },
+  "title": "Strukture podataka i algoritmi II",
+  "year": 2,
+  "type": "obavezni"
+},
+{
+  "_id": "M097",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "preddiplomski-matematika": 2
+  },
+  "title": "Teorijske osnove računalne znanosti",
+  "year": 2,
+  "type": "obavezni"
+},
+{
+  "_id": "Z015",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "preddiplomski-matematika": 2
+  },
+  "title": "Tjelesna i zdravstvena kultura II",
+  "year": 2,
+  "type": "obavezni"
+},
+{
+  "_id": "I049",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2
+  },
+  "title": "Programiranje mobilnih aplikacija",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "I050",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2
+  },
+  "title": "Računalne mreže",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "I055",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  },
+  "title": "Ugrađeni sustavi",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "I047",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2
+  },
+  "title": "Natjecateljsko programiranje",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "M098",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "preddiplomski-matematika": 2,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  },
+  "title": "Uvod u vjerojatnost i statistiku",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "M099",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "preddiplomski-matematika": 3,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  },
+  "title": "Vektorski prostori",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "I059",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2
+  },
+  "title": "3D računalna grafika",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "I043",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2
+  },
+  "title": "Bioinformatika",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "M062",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "preddiplomski-matematika": 2
+  },
+  "title": "Primjene diferencijalnog i integralnog računa I",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "I051",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  },
+  "title": "Računalno jezikoslovlje",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "M141",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 2
+  },
+  "title": "Uvod u matematičku fiziku",
+  "year": 2,
+  "type": "izborni"
+},
+{
+  "_id": "I057",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "preddiplomski-matematika": 3
+  },
+  "title": "Web programiranje",
+  "year": 3,
+  "type": "obavezni"
+},
+{
+  "_id": "M090",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "preddiplomski-matematika": 3
+  },
+  "title": "Obične diferencijalne jednadžbe",
+  "year": 3,
+  "type": "obavezni"
+},
+{
+  "_id": "I058",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3
+  },
+  "title": "Završni praktični projekt",
+  "year": 3,
+  "type": "obavezni"
+},
+{
+  "_id": "M096",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "preddiplomski-matematika": 3,
+    "diplomski-financijska-matematika": 5
+  },
+  "title": "Strojno učenje",
+  "year": 3,
+  "type": "obavezni"
+},
+{
+  "_id": "M089",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "preddiplomski-matematika": 2
+  },
+  "title": "Numerička matematika",
+  "year": 3,
+  "type": "obavezni"
+},
+{
+  "_id": "Z007",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "preddiplomski-matematika": 3
+  },
+  "title": "Završni rad",
+  "year": 3,
+  "type": "obavezni"
+},
+{
+  "_id": "I052",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3
+  },
+  "title": "Softversko inženjerstvo",
+  "year": 3,
+  "type": "obavezni"
+},
+{
+  "_id": "M094",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "preddiplomski-matematika": 3,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  },
+  "title": "Realna analiza",
+  "year": 3,
+  "type": "izborni"
+},
+{
+  "_id": "Z013",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  },
+  "title": "Stručna praksa",
+  "year": 3,
+  "type": "izborni"
+},
+{
+  "_id": "M083",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "preddiplomski-matematika": 3,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  },
+  "title": "Algebra",
+  "year": 3,
+  "type": "izborni"
+},
+{
+  "_id": "M095",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika",
+    "diplomski-matematika-racunarstvo",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "preddiplomski-matematika": 2,
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  },
+  "title": "Statistički praktikum",
+  "year": 3,
+  "type": "izborni"
+},
+{
+  "_id": "M092",
+  "programs": [
+    "preddiplomski-matematika-racunarstvo",
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika-racunarstvo": 3,
+    "preddiplomski-matematika": 3
+  },
+  "title": "Osnove teorije upravljanja s primjenama",
+  "year": 3,
+  "type": "izborni"
+},
+{
+  "_id": "M100",
+  "title": "Elementarna matematika",
+  "year": 1,
+  "type": "obavezni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 1
+  }
+},
+{
+  "_id": "M101",
+  "title": "Elementarna geometrija",
+  "year": 1,
+  "type": "obavezni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 1
+  }
+},
+{
+  "_id": "M102",
+  "title": "Kombinatorna i diskretna matematika",
+  "year": 1,
+  "type": "obavezni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 1
+  }
+},
+{
+  "_id": "M009",
+  "title": "Funkcije više varijabli",
+  "year": 2,
+  "type": "obavezni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 2
+  }
+},
+{
+  "_id": "I027",
+  "title": "Matematički alati",
+  "year": 2,
+  "type": "obavezni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 2
+  }
+},
+{
+  "_id": "M015",
+  "title": "Kompleksna analiza",
+  "year": 2,
+  "type": "obavezni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 2
+  }
+},
+{
+  "_id": "M108",
+  "title": "Teorija brojeva",
+  "year": 2,
+  "type": "obavezni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 2
+  }
+},
+{
+  "_id": "F007",
+  "title": "Osnove fizike I",
+  "year": 2,
+  "type": "izborni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 2
+  }
+},
+{
+  "_id": "F008",
+  "title": "Osnove fizike II",
+  "year": 2,
+  "type": "izborni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 2
+  }
+},
+{
+  "_id": "F009",
+  "title": "Osnove fizike III",
+  "year": 3,
+  "type": "izborni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 3
+  }
+},
+{
+  "_id": "M105",
+  "title": "Uvod u diferencijalnu geometriju",
+  "year": 3,
+  "type": "izborni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 3
+  }
+},
+{
+  "_id": "M063",
+  "title": "Primjene diferencijalnog i integralnog računa II",
+  "year": 3,
+  "type": "izborni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 3
+  }
+},
+{
+  "_id": "F010",
+  "title": "Osnove fizike IV",
+  "year": 3,
+  "type": "izborni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 3
+  }
+},
+{
+  "_id": "M106",
+  "title": "Teorija skupova",
+  "year": 3,
+  "type": "izborni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 3
+  }
+},
+{
+  "_id": "M107",
+  "title": "Metode matematičke fizike",
+  "year": 3,
+  "type": "izborni",
+  "programs": [
+    "preddiplomski-matematika"
+  ],
+  "programYears": {
+    "preddiplomski-matematika": 3
+  }
+},
+{
+  "_id": "M118",
+  "title": "Vjerojatnost",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 4,
+    "diplomski-financijska-matematika": 4
+  }
+},
+{
+  "_id": "I066",
+  "title": "Inteligentni robotski sustavi",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 4
+  }
+},
+{
+  "_id": "MI008",
+  "title": "Semantika programskih jezika",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 4
+  }
+},
+{
+  "_id": "MI009",
+  "title": "Primijenjena linearna algebra i znanstveno računarstvo",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 4
+  }
+},
+{
+  "_id": "I067",
+  "title": "Operativni sustavi",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "M128",
+  "title": "Linearna optimizacija",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M129",
+  "title": "Nelinearna optimizacija",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "I068",
+  "title": "Napredne tehnike programiranja",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "MIP001",
+  "title": "Diplomski rad",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "I069",
+  "title": "Obrada prirodnog jezika tehnikama dubinskog učenja",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "MI006",
+  "title": "Kriptografija",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M124",
+  "title": "Napredni koncepti strojnog učenja",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "I033",
+  "title": "Paralelno programiranje",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "I070",
+  "title": "Računalni vid",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "I064",
+  "title": "Suvremene teme iz računalne znanosti",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "I071",
+  "title": "Aproksimacijski algoritmi",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "I072",
+  "title": "Heuristički algoritmi",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "I073",
+  "title": "Statička analiza programa",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "I074",
+  "title": "Distribuirani sustavi",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "I065",
+  "title": "Randomizirani algoritmi",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "I075",
+  "title": "Prevoditelj programskih jezika",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "I076",
+  "title": "Linux operacijski sustav",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "M003",
+  "title": "Analiza vremenskih nizova",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M119",
+  "title": "Slučajni procesi I",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 4
+  }
+},
+{
+  "_id": "M121",
+  "title": "Slučajni procesi II",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 4
+  }
+},
+{
+  "_id": "M122",
+  "title": "Multivarijatna analiza",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M130",
+  "title": "Teorija upravljanja",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "M131",
+  "title": "Dinamički sustavi",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "M132",
+  "title": "Redukcija modela i aproksimacijski pristupi",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "M111",
+  "title": "Normirani prostori",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "M133",
+  "title": "Parcijalne diferencijalne jednadžbe",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "M134",
+  "title": "Numeričke metode za parcijalne diferencijalne jednadžbe",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "M135",
+  "title": "Mehanika kontinuuma",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "M136",
+  "title": "Fourierova analiza i primjene",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5
+  }
+},
+{
+  "_id": "MI005",
+  "title": "Matematički aspekti izbornih sustava",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "M048",
+  "title": "Teorija odlučivanja",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "MI001",
+  "title": "Grafovi i primjene",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "MI007",
+  "title": "Kompleksne mreže",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "MI002",
+  "title": "Grupiranje podataka i primjene",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "M109",
+  "title": "Konveksne funkcije",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5,
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "I040",
+  "title": "Osnove vođenja projekata",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-matematika-racunarstvo",
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-matematika-racunarstvo": 5,
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M008",
+  "title": "Financijska i aktuarska matematika",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 4
+  }
+},
+{
+  "_id": "E012",
+  "title": "Makroekonomija I",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 4
+  }
+},
+{
+  "_id": "M120",
+  "title": "Statistika",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 4
+  }
+},
+{
+  "_id": "E013",
+  "title": "Makroekonomija II",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 4
+  }
+},
+{
+  "_id": "M123",
+  "title": "Matematičke financije",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "E001",
+  "title": "Analiza poslovanja poduzeća",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "E009",
+  "title": "Upravljanje kreditnim rizicima",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "I061",
+  "title": "Računalno razmišljanje i programiranje I",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-financijska-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5,
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "I063",
+  "title": "Računalno razmišljanje i programiranje II",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-financijska-matematika",
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5,
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "M125",
+  "title": "Odabrane primjene vjerojatnosti",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M126",
+  "title": "Aktualne teme iz statistike",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "E004",
+  "title": "Financijska tržišta",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "E014",
+  "title": "Upravljanje financijskom imovinom",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M144",
+  "title": "Statističko učenje",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M145",
+  "title": "Matematički aspekti financijskih tržišta",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M146",
+  "title": "Bayesovska statistika",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "M127",
+  "title": "Mjera i integral",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-financijska-matematika"
+  ],
+  "programYears": {
+    "diplomski-financijska-matematika": 5
+  }
+},
+{
+  "_id": "MP002",
+  "title": "Metodika nastave matematike I",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "M115",
+  "title": "Odabrane teme iz nastave matematike",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "P009",
+  "title": "Pedagogija I",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "P005",
+  "title": "Psihologija odgoja i obrazovanja I",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "I062",
+  "title": "Digitalna pismenost",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "IP001",
+  "title": "Metodika nastave informatike I",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "MP003",
+  "title": "Metodika nastave matematike II",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "M116",
+  "title": "Konstruktivna i analitička geometrija",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "P010",
+  "title": "Pedagogija II",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "P006",
+  "title": "Psihologija odgoja i obrazovanja II",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "P007",
+  "title": "Didaktika I",
+  "year": 4,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 4
+  }
+},
+{
+  "_id": "P008",
+  "title": "Didaktika II",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "IP002",
+  "title": "Metodika nastave informatike II",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "IP003",
+  "title": "Metodička informatička praksa I",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "MP004",
+  "title": "Metodika nastave matematike III",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "MP005",
+  "title": "Metodička matematička praksa I",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "MI004",
+  "title": "Metode optimizacije i primjene",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "IP004",
+  "title": "Metodička informatička praksa II",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "MP006",
+  "title": "Metodika nastave matematike IV",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "MP007",
+  "title": "Metodička matematička praksa II",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "M117",
+  "title": "Povijest matematike",
+  "year": 5,
+  "type": "obavezni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "I060",
+  "title": "Web programiranje i primjene",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "MI003",
+  "title": "Kriptografija i sigurnost sustava",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "M110",
+  "title": "Matematička logika",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "M112",
+  "title": "Nelinearne diofantske jednadžbe",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "M113",
+  "title": "Projektivna geometrija",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "MP001",
+  "title": "Učenička matematička natjecanja",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+},
+{
+  "_id": "M114",
+  "title": "Uvod u diferencijalnu geometriju",
+  "year": 5,
+  "type": "izborni",
+  "programs": [
+    "diplomski-nastavnicki-matematika-informatika"
+  ],
+  "programYears": {
+    "diplomski-nastavnicki-matematika-informatika": 5
+  }
+}]

@@ -1,14 +1,22 @@
 require('dotenv').config()
-const { MongoClient } = require('mongodb')
+const { MongoClient, ServerApiVersion } = require('mongodb')
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/student_forum'
-const client = new MongoClient(MONGODB_URI)
+const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_DB_NAME = process.env.MONGODB_DB_NAME
+
+const client = new MongoClient(MONGODB_URI, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true
+  }
+})
 let _db
 
 async function connect() {
   if (!_db) {
     await client.connect()
-    _db = client.db() // use DB from URI
+    _db = MONGODB_DB_NAME ? client.db(MONGODB_DB_NAME) : client.db()
   }
   return _db
 }

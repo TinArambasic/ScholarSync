@@ -1,0 +1,30 @@
+[{
+  "_id": "a1771716819175",
+  "content": "https://docs.docker.com/reference/cli/docker/init/\r\n\r\npogledaj ovdje",
+  "questionId": "q1771265030840",
+  "userId": "u1771262310781",
+  "author": {
+    "username": "TinArambasic",
+    "role": "Founder"
+  },
+  "createdAt": "2026-02-21T23:33:39.175Z",
+  "isHighlighted": false,
+  "likes": [
+    "u1771264407390"
+  ]
+},
+{
+  "_id": "a1771946287570",
+  "content": "test odgovor",
+  "questionId": "q1771946274818",
+  "userId": "u1771264407390",
+  "author": {
+    "username": "testuser",
+    "role": "student"
+  },
+  "createdAt": "2026-02-24T15:18:07.570Z",
+  "isHighlighted": false,
+  "likes": [
+    "u1771262310781"
+  ]
+}]

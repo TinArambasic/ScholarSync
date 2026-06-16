@@ -1,0 +1,32 @@
+[{
+  "_id": "q1771265030840",
+  "title": "Kako postaviti docker",
+  "content": "Nisam siguran kako postaviti docker da mi radi s webom",
+  "courseId": "I057",
+  "userId": "u1771264407390",
+  "author": {
+    "username": "testuser",
+    "role": "student"
+  },
+  "answersCount": 1,
+  "isCompleted": false,
+  "likes": [
+    "u1771262310781"
+  ],
+  "createdAt": "2026-02-16T18:03:50.840Z"
+},
+{
+  "_id": "q1771946274818",
+  "title": "Test pitanje",
+  "content": "lorem ipsum dolor sit amet",
+  "courseId": "I057",
+  "userId": "u1771262310781",
+  "author": {
+    "username": "TinArambasic",
+    "role": "Founder"
+  },
+  "answersCount": 1,
+  "isCompleted": false,
+  "likes": [],
+  "createdAt": "2026-02-24T15:17:54.818Z"
+}]

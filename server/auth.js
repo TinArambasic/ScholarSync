@@ -1,6 +1,28 @@
 const jwt = require('jsonwebtoken')
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production'
+function getJwtSecret() {
+  const jwtSecret = process.env.JWT_SECRET
+  const nodeEnv = process.env.NODE_ENV || 'development'
+  const isProduction = nodeEnv === 'production'
+
+  if (!jwtSecret) {
+    throw new Error('JWT_SECRET is required. Set it in environment variables before starting the server.')
+  }
+
+  const isPlaceholderSecret = jwtSecret === 'your-super-secret-jwt-key-change-this-in-production'
+
+  if (isPlaceholderSecret || jwtSecret.length < 32) {
+    if (isProduction) {
+      throw new Error('JWT_SECRET is insecure in production. Use a strong random secret with at least 32 characters.')
+    }
+
+    console.warn('Warning: JWT_SECRET is weak or placeholder. Use a strong random secret before deploying.')
+  }
+
+  return jwtSecret
+}
+
+const JWT_SECRET = getJwtSecret()
 
 function generateToken(user) {
   return jwt.sign(
@@ -57,4 +79,8 @@ function optionalAuth(req, res, next) {
   next()
 }
 
-module.exports = { generateToken, verifyToken, optionalAuth }
+function verifySocketToken(token) {
+  return jwt.verify(token, JWT_SECRET)
+}
+
+module.exports = { generateToken, verifyToken, optionalAuth, verifySocketToken }
