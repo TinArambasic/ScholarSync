@@ -118,7 +118,7 @@ export default function AnswerDetail() {
     <main className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="container mx-auto max-w-3xl">
         <button
-          onClick={() => navigate(`/questions/${answer.questionId}`)}
+          onClick={() => navigate(-1)}
           className="text-sm text-primary-600 hover:text-primary-700 mb-6 inline-block"
         >
           ← Natrag na pitanje
