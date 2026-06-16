@@ -538,7 +538,7 @@ async function start() {
 
   // Users & courses
   app.get('/api/users', async (req, res) => {
-    try { res.json(await collection('users').find({}).toArray()) } catch (err) { res.status(500).json({ message: 'DB error' }) }
+    try { res.json(await collection('users').find({}, { projection: { password: 0, email: 0 } }).toArray()) } catch (err) { res.status(500).json({ message: 'DB error' }) }
   })
 
   app.get('/api/courses', async (req, res) => {
