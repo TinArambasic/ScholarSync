@@ -10,6 +10,7 @@ const { connect, collection } = require('./db')
 const { validateEmail, validateUsername, validatePassword, validateRequired, sanitizeString } = require('./validation')
 const { generateToken, verifyToken, optionalAuth, verifySocketToken } = require('./auth')
 const upload = require('./upload')
+const seedUploads = require('./seed-uploads')
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -31,6 +32,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 // Helper to start server after DB connects
 async function start() {
   await connect()
+  seedUploads()
 
   const httpServer = http.createServer(app)
   const io = new Server(httpServer, {
