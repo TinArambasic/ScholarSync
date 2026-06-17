@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import api from '../api'
 
 const AuthContext = createContext(null)
 
@@ -20,6 +21,19 @@ export function AuthProvider({ children }){
   useEffect(() => {
     if(token) localStorage.setItem('authToken', token)
     else localStorage.removeItem('authToken')
+  }, [token])
+
+  // Refresh user from the server on load (and after login) so fields like
+  // profilePicture stay in sync even if localStorage is stale.
+  useEffect(() => {
+    if(!token) return
+    let cancelled = false
+    api.get('/api/profile')
+      .then((res) => {
+        if(!cancelled && res.data) setUser((prev) => ({ ...prev, ...res.data }))
+      })
+      .catch(() => { /* 401 is handled by the api interceptor */ })
+    return () => { cancelled = true }
   }, [token])
 
   // Listen to storage events (sync across tabs)
