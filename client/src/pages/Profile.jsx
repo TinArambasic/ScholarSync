@@ -82,13 +82,13 @@ export default function Profile() {
                     user.username.charAt(0).toUpperCase()
                   )}
                 </div>
-                <div className="flex-1">
-                  <h2 className="text-2xl font-bold text-gray-900">{user.username}</h2>
+                <div className="flex-1 min-w-0">
+                  <h2 className="text-2xl font-bold text-gray-900 truncate">{user.username}</h2>
                   <p className="text-gray-600 capitalize">{user.role || 'student'}</p>
                 </div>
                 <button
                   onClick={() => navigate('/profile/edit')}
-                  className="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-gray-50 transition shadow-sm"
+                  className="shrink-0 px-3 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-gray-50 transition shadow-sm text-sm"
                   title="Uredi profil"
                 >
                   Edit

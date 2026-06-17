@@ -30,7 +30,7 @@ export function AuthProvider({ children }){
     let cancelled = false
     api.get('/api/profile')
       .then((res) => {
-        if(!cancelled && res.data) setUser((prev) => ({ ...prev, ...res.data }))
+        if(!cancelled && res.data?.user) setUser((prev) => ({ ...prev, ...res.data.user }))
       })
       .catch(() => { /* 401 is handled by the api interceptor */ })
     return () => { cancelled = true }
