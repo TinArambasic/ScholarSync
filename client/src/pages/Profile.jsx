@@ -75,7 +75,7 @@ export default function Profile() {
                 {/* User Info Card */}
                 <div className="mb-6 p-6 bg-gradient-to-r from-primary-50 to-primary-100 rounded-lg">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold overflow-hidden">
+                    <div className="w-20 h-20 shrink-0 bg-primary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold overflow-hidden">
                   {user.profilePicture ? (
                     <img src={user.profilePicture.startsWith('http') ? user.profilePicture : `${API_URL}${user.profilePicture}`} alt={user.username} className="w-full h-full object-cover" />
                   ) : (

@@ -90,12 +90,12 @@ export default function Navbar() {
     <nav className="bg-white border-b border-gray-200  shadow-sm">
       <div className="container max-w-6xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link className="font-bold text-xl text-primary-600 flex items-center gap-2" to="/">
-            <img src="/ScholarSync%20Logo.png" alt="ScholarSync Logo" className="w-8 h-8" />
-            ScholarSync
+          <Link className="font-bold text-xl text-primary-600 flex items-center gap-2 min-w-0" to="/">
+            <img src="/ScholarSync%20Logo.png" alt="ScholarSync Logo" className="w-8 h-8 shrink-0" />
+            <span className="truncate">ScholarSync</span>
           </Link>
-          
-          <div className="flex gap-4 items-center">
+
+          <div className="flex gap-2 sm:gap-4 items-center shrink-0">
             {user ? (
               <>
                 <Link
@@ -120,7 +120,7 @@ export default function Navbar() {
                       <span className="text-lg">{user.username.charAt(0).toUpperCase()}</span>
                     )}
                   </div>
-                  <span className="text-sm text-gray-600">{user.username}</span>
+                  <span className="text-sm text-gray-600 hidden sm:inline">{user.username}</span>
                 </Link>
               </>
             ) : (
